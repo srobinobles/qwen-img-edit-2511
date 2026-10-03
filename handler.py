@@ -185,8 +185,17 @@ DEFAULT_WORKFLOW = {
         "class_type": "TextEncodeQwenImageEditPlus",
         "_meta": {"title": "TextEncodeQwenImageEditPlus (Positive)"}
     },
+    "300": {
+        "inputs": {
+            "lora_name": "qwen-image-edit-2511-multiple-angles-lora.safetensors",
+            "strength_model": 1.0,
+            "model": ["170:145", 0]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {"title": "Multiple-Angles LoRA (always on)"}
+    },
     "170:152": {
-        "inputs": {"strength": 1, "model": ["170:145", 0]},
+        "inputs": {"strength": 1, "model": ["300", 0]},
         "class_type": "CFGNorm",
         "_meta": {"title": "CFGNorm"}
     },
@@ -684,6 +693,13 @@ QWEN_MODELS = {
         "relative_path": "loras",
         "filename": "Qwen-Image-Edit-2511-Lightning-8steps-V1.0-bf16.safetensors",
         "name": "Qwen Edit Lightning 8-step LoRA",
+        "type": "loras"
+    },
+    "loras/qwen-image-edit-2511-multiple-angles-lora.safetensors": {
+        "url": "https://huggingface.co/fal/Qwen-Image-Edit-2511-Multiple-Angles-LoRA/resolve/main/qwen-image-edit-2511-multiple-angles-lora.safetensors",
+        "relative_path": "loras",
+        "filename": "qwen-image-edit-2511-multiple-angles-lora.safetensors",
+        "name": "Qwen Edit Multiple-Angles LoRA (fal)",
         "type": "loras"
     }
 }
